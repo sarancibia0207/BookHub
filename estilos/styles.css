@@ -1,0 +1,23 @@
+#titulo{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 10vh;
+}
+
+header{
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: solid #000;
+}
+.menu{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 20px;
+    height: 10vh;
+}
