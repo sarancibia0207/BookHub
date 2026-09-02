@@ -7,40 +7,62 @@
     <link rel="stylesheet" href="/estilos/styles.css">
 </head>
 <body>
+
+
     <header id="header"></header>
     <section id="contenido">
-        <h1 id="titulo">Biblioteca BookHub</h1>
+        <article>
+            <a class="iaLogo" href="https://th.bing.com/th/id/OIP.wWAUSIGHXe8uWmWt4njAhQHaEK?w=293&h=180&c=7&r=0&o=7&pid=1.7&rm=3"><img alt="Logotipo del Archivo de Internet" src="https://th.bing.com/th/id/OIP.wWAUSIGHXe8uWmWt4njAhQHaEK?w=293&h=180&c=7&r=0&o=7&pid=1.7&rm=3" width="100"></a>
+        </article>
+        <article class="Logo">
+            <a href="/" title="Logo Biblioteca">
+            <div class="logo-txt">
+            <img class="logo-icon" src="https://www.bing.com/th/id/OIP.i8naoxqdhTuv76lHKTEndQAAAA?w=193&h=151&c=8&rs=1&qlt=90&o=6&pid=ImgAns&rm=2" width="200" height="80" alt="BookHub Logo">
+            </div>
+            </a>
+        </article>
         <nav class="menu">
-            <a href="#">Inicio </a>
-            <a href="Libros">Libros </a>
-            <a href="Categorias">Categorias </a>
-            <a href="Mas Vendidos">Mas Vendidos </a>
-            <a href="Quienes somos">¿Quienes somos? </a>
-            <a href="Soporte Tecnico">Soporte Tecnico/Ayuda</a>
+            <a class="#">Inicio </a>
+            <a class="Libros">Libros </a>
+            <a class="Categorias">Categorias </a>
+            <a class="Mas Vendidos">Mas Vendidos </a>
+            <a class="Quienes somos">¿Quienes somos? </a>
+            <a class="Soporte Tecnico">Soporte Tecnico/Ayuda</a>
+            <a class="btn primary" href="/account/login">Acceder</a>
+            <a class="btn primary" href="/account/create">Registrarse</a>
 
         </nav>
     </section">
-    <section id = "libros">
-        <h2> Nuestros Libros</h2>
-        <article>
-            <h3>El libro mayor de Violeta Parra</h3>
-            <img src="https://th.bing.com/th/id/OIP.NDa9kBfSL-dxXGs10uO1fQHaKs?w=203&h=293&c=7&r=0&o=7&pid=1.7&rm=3" alt="">
-            <button>Ver Libro</button>
-            <p>Autor: Violeta Parra</p>
-            <h3>Don Quijote De La Mancha</h3>
-            <img src="https://th.bing.com/th/id/OIP.lxdbNYKCODu66jziEL7SlQHaKe?w=203&h=287&c=7&r=0&o=7&pid=1.7&rm=3" alt="">
-            <button>Ver Libro</button>
-        </article>
-    </section>
 
-    <article class="Inicio">
+    <section id="BuscarAutores">
+     <article class="BuscarAutores">
         <div class="autores">
-            <input type="text" placeholder="Ingrese nombre del autor">
+            <input type="text" placeholder="Ingrese nombre del autor" id="autor">
         </div>
         <button onclick="">Autor</button>
     </article>
+    </section>
+
+
+    <section id = "libros">
+        <article>
+            <h3>El libro mayor de Violeta Parra</h3>
+            <a class="Libro1" href="https://www.mercadolibre.cl/el-libro-mayor-de-violeta-parra--isabel-parra/up/MLCU71487526"><img alt="Libro Violeta Parra" src="https://th.bing.com/th/id/OIP.zwU62Q9AyKyu9AT3X0DHjwAAAA?w=203&h=287&c=7&r=0&o=7&pid=1.7&rm=3">
+            <button onclick="">Ver Libro</button>
+            <h3>Don Quijote De La Mancha</h3>
+            <a class="Libro2" href="https://www.sensacine.com/series/serie-5826/"><img alt="Libro Don Quijote De La Mancha" src="https://th.bing.com/th/id/OIP.lxdbNYKCODu66jziEL7SlQHaKe?w=203&h=287&c=7&r=0&o=7&pid=1.7&rm=3">
+            <button onclick="">Ver Libro</button>
+        </article>
+    </section>
+
+    
 
     <footer id="footer">
+        <p>Nuestras redes sociales<p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Logo_de_Facebook.png?utm_source=es.wikipedia.org&utm_campaign=index&utm_content=original" width="100" height="80" alt="BookHub Logo">
+        <img src="https://unblast.com/wp-content/uploads/2025/07/instagram-logo-colored.jpg" width="100" height="80" alt="BookHub Logo">
+        <img src="" alt="">
+        <p>BookHub© 2026 Todos los derechos reservados</p>
     </footer>
 </body>
 </html>

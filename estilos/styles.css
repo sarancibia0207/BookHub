@@ -5,14 +5,6 @@
     flex-wrap: wrap;
     height: 10vh;
 }
-
-header{
-    
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: solid #000;
-}
 .menu{
     display: flex;
     text-align: center;
@@ -20,4 +12,48 @@ header{
     flex-wrap: nowrap;
     gap: 20px;
     height: 10vh;
+}
+
+.BuscarAutores{
+    display: flex;
+    text-align: left;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+.Logo{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    gap: 200px;
+    height: 10vh;
+
+}
+
+.UbiBoton{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 200px;
+    height: 10vh;
+
+}
+.btn.primary {
+    background-color: var(--color-primary);
+    border: none;
+    border-radius: 5px;
+    color: var(--white) !important;
+}
+a.btn{
+    text-decoration: none;
+}
+.btn.primary {
+    background-color: var(--color-primary);
+    border: none;
+    border-radius: 5px;
+    color: var(--white) !important;
+}
+section{
+    padding: 80px 10%;
+    min-height: 300px;
 }
