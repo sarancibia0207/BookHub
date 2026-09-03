@@ -1,59 +1,127 @@
-#titulo{
+/* Diseño de la pagina*/
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    background-color: #faf7f0;
+    line-height: 1.5;
+}
+
+a{
+    color: #1a4d8f;
+}
+
+h1, h2, h3{
+    color: #222;
+}
+
+/* Header*/
+header{
     display: flex;
-    text-align: center;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
     flex-wrap: wrap;
-    height: 10vh;
+    padding: 16px 5%;
+    background-color: #ffffff;
+    border-bottom: 2px solid #1a4d8f;
 }
-.menu{
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    flex-wrap: nowrap;
-    gap: 20px;
-    height: 10vh;
-}
-
-.BuscarAutores{
-    display: flex;
-    text-align: left;
-    justify-content: center;
-    flex-wrap: nowrap;
-}
-.Logo{
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    gap: 200px;
-    height: 10vh;
-
-}
-
-.UbiBoton{
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    flex-wrap: nowrap;
-    gap: 200px;
-    height: 10vh;
-
-}
-.btn.primary {
-    background-color: var(--color-primary);
-    border: none;
-    border-radius: 5px;
-    color: var(--white) !important;
-}
-a.btn{
+.logo{
+    font-size: 1.4rem;
+    font-weight: bold;
     text-decoration: none;
-}
-.btn.primary {
-    background-color: var(--color-primary);
-    border: none;
-    border-radius: 5px;
-    color: var(--white) !important;
+    color: #1a4d8f;
 }
 section{
     padding: 80px 10%;
     min-height: 300px;
+}
+#bienvenida{
+    padding: 40px 5%;
+    text-align: center;
+}
+#bienvenida input[type="text"] {
+    padding: 8px 12px;
+    border: 1px solid #999;
+    border-radius: 4px;
+    width: 260px;
+}
+
+#libros{
+    padding: 30px 5%;
+    background-color: #ffffff;
+}
+
+#libros h2{
+    margin-bottom: 20px;
+}
+
+#libros{
+    display: block;
+}
+#libros article.libro{
+    display: inline-block;
+    width: 180px;
+    vertical-align: top;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.libro img{
+    width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+/* Subrayado */
+header nav a {
+    margin-left: 16px;
+    text-decoration: none;
+    color: #222;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+.libro h3{
+    font-size: 1rem;
+    margin: 4px 0;
+}
+.libro p{
+    font-size: 0.85rem;
+    color: #555;
+    margin: 0 0 8px;
+}
+
+.boton,
+button{
+    display: inline-block;
+    background-color: #1a4d8f;
+    color: #ffffff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    text-decoration: none;
+    cursor: pointer;
+}
+.boton:hover,
+button:hover{
+    background-color: #123c70;
+}
+
+footer{
+    background-color: #1a2233;
+    color: #cccccc;
+    text-align: center;
+    padding: 24px 5%;
+}
+footer p{
+    margin: 8px 0;
+    font-size: 0.85rem;
 }
