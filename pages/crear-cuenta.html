@@ -8,47 +8,47 @@
 </head>
 <body>
     <header>
-        <a href="index.html" class="logo">BookHub</a>
+            <a href="../index.html" class="logo">BookHub</a>
 
-        <nav>
-            <a href="index.html">Inicio</a>
-            <a href="#libros">Libros</a>
-            <a href="#quienes-somos">¿Quienes somos?</a>
-            <a href="pages/inicio-sesion.html">Acceder</a>
-            <a href="pages/crear-cuenta.html">Registrarse</a>
-        </nav>
+            <nav>
+                <a href="../index.html">Inicio</a>
+                <a href="../index.html#libros">Libros</a>
+                <a href="../index.html#quienes-somos">¿Quiénes somos?</a>
+                <a href="inicio-sesion.html">Acceder</a>
+                <a href="crear-cuenta.html">Registrarse</a>
+            </nav>
     </header>
 
-    <div class="registro">
-            <h1>Creación de Cuenta</h1>
-            <p>Regístrate para pedir libros prestados</p>
+    <main class="contenedor-pagina-form">
+            <div class="tarjeta-formulario">
+                <h1>Creación de Cuenta</h1>
+                <p>Regístrate para pedir libros prestados</p>
 
-            <!-- El formulario que agrupa los datos -->
-            <form id="formularioCuenta">
+                <form id="formularioCuenta">
+                    <div class="campo-form">
+                        <label for="nombre">Nombre completo:</label>
+                        <input type="text" id="nombre" placeholder="Ej. Carlos Ruiz" required>
+                    </div>
 
-                <div class="datos">
-                    <label for="nombre">Nombre completo:</label>
-                    <input type="text" id="nombre" placeholder="Ej. Carlos Ruiz" required>
-                </div>
+                    <div class="campo-form">
+                        <label for="email">Correo electrónico:</label>
+                        <input type="email" id="email" placeholder="correo@ejemplo.com" required>
+                    </div>
 
-                <div class="datos">
-                    <label for="email">Correo electrónico:</label>
-                    <input type="email" id="email" placeholder="correo@ejemplo.com" required>
-                </div>
+                    <div class="campo-form">
+                        <label for="libro">Género literario favorito:</label>
+                        <input type="text" id="libro" placeholder="Ej. Ciencia Ficción, Terror..." required>
+                    </div>
 
-                <div class="datos">
-                    <label for="libro">Género literario favorito:</label>
-                    <input type="text" id="libro" placeholder="Ej. Ciencia Ficción, Terror..." required>
-                </div>
+                    <div class="campo-form">
+                        <label for="clave">Contraseña:</label>
+                        <input type="password" id="clave" placeholder="Crea una contraseña" required>
+                    </div>
 
-                <div class="datos">
-                    <label for="clave">Contraseña:</label>
-                    <input type="password" id="clave" placeholder="Crea una contraseña" required>
-                </div>
-
-                <button type="submit">Crear mi cuenta</button>
-            </form>
-        </div>
+                    <button type="submit">Crear mi cuenta</button>
+                </form>
+            </div>
+        </main>
 
         <footer id="footer">
             <p>Nuestras redes sociales</p>
