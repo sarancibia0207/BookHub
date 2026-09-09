@@ -1,22 +1,45 @@
 /* Diseño de la pagina*/
+:root{
+    --azul: #1a4d8f;
+    --azul-oscuro: #0f3560;
+    --azul-claro: #e8f0fb;
+    --negro: #111417;
+    --gris-texto: #4a4f55;
+    --gris-borde: #d8dce1;
+    --blanco: #ffffff;
+    --sombra: 0 4px 14px rgba(17, 20, 23, 0.08);
+}
 *{
     box-sizing: border-box;
 }
 
+html{
+    height: 100%;
+}
+
 body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     color: #222;
     background-color: #faf7f0;
     line-height: 1.5;
 }
+footer{
+    flex-shrink: 0;
+}
+main{
+    flex: 1 0 auto;
+}
 
 a{
-    color: #1a4d8f;
+    color: var(--azul);
 }
 
 h1, h2, h3{
-    color: #222;
+    color: var(--negro);
 }
 /*
    HEADER Y NAVEGACIÓN
@@ -27,24 +50,27 @@ header{
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 16px 5%;
-    background-color: #ffffff;
-    border-bottom: 2px solid #1a4d8f;
+    background-color: var(--negro);
+    border-bottom: 3px solid var(--azul);
 }
 .logo{
     font-size: 1.4rem;
     font-weight: bold;
     text-decoration: none;
-    color: #1a4d8f;
+    color: var(--azul);
 }
 header nav a {
     margin-left: 16px;
     text-decoration: none;
-    color: #222;
+    color: var(--blanco);
+    font-weight: 500;
 }
 
 header nav a:hover {
+    color: var(--azul-claro);
     text-decoration: underline;
 }
+
 /*
    SECCIONES DE LA PÁGINA PRINCIPAL (INDEX)
 */
@@ -53,23 +79,41 @@ section{
     min-height: 300px;
 }
 #bienvenida{
-    padding: 40px 5%;
+    padding: 60px 5%;
     text-align: center;
+    background-color: var(--azul-claro);
+}
+#bienvenida h1{
+    color: var(--azul-oscuro);
+    margin-bottom: 24px;
 }
 #bienvenida input[type="text"] {
-    padding: 8px 12px;
-    border: 1px solid #999;
+    padding: 10px 12px;
+    border: 1px solid var(--gris-borde);
     border-radius: 4px;
     width: 260px;
+    background-color: var(--blanco);
+}
+.busqueda{
+    padding: 20px 5% 0;
+    text-align: center;
+    min-height: 0;
+}
+#resultadoBusqueda{
+    color: var(--gris-texto);
+    font-style: italic;
 }
 
 #libros{
-    padding: 30px 5%;
-    background-color: #ffffff;
+    padding: 30px 5% 60px;
+    background-color: var(--blanco);
 }
 
 #libros h2{
     margin-bottom: 20px;
+    color: var(--azul-oscuro);
+    border-bottom: 2px solid var(--azul-claro);
+    padding-bottom: 10px;
 }
 
 #libros{
@@ -82,11 +126,15 @@ section{
     margin-right: 20px;
     margin-bottom: 20px;
     text-align: center;
+    background-color: var(--blanco);
+    border: 1px solid var(--gris-borde);
+    border-radius: 8px;
+    padding: 12px;
 }
 .libro img{
     width: 100%;
     height: auto;
-    border: 1px solid #ccc;
+    border: 1px solid var(--gris-borde);
     border-radius: 4px;
     margin-bottom: 8px;
 }
@@ -94,10 +142,11 @@ section{
 .libro h3{
     font-size: 1rem;
     margin: 4px 0;
+    color: var(--negro);
 }
 .libro p{
     font-size: 0.85rem;
-    color: #555;
+    color: var(--gris-texto);
     margin: 0 0 8px;
 }
 /*
@@ -106,54 +155,91 @@ section{
 .boton,
 button{
     display: inline-block;
-    background-color: #1a4d8f;
-    color: #ffffff;
+    background-color: var(--azul);
+    color: var(--blanco);
     border: none;
     padding: 10px 16px;
     border-radius: 4px;
     font-size: 0.95rem;
+    font-weight: 600;
     text-decoration: none;
     cursor: pointer;
 }
 .boton:hover,
 button:hover{
-    background-color: #123c70;
+    background-color: var(--azul-oscuro);
 }
 
 footer{
-    background-color: #1a2233;
-    color: #cccccc;
+    background-color: var(--negro);
+    color: var(--blanco);
     text-align: center;
     padding: 24px 5%;
 }
 footer p{
     margin: 8px 0;
     font-size: 0.85rem;
+    color: var(--gris-texto);
 }
 
 /* Estilo de la tarjeta blanca donde va el formulario */
+.tarjeta-formulario{
+    background-color: var(--blanco);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: var(--sombra);
+    max-width: 400px;
+    width: 100%;
+}
+.tarjeta-formulario h1,
+.tarjeta-formulario h2{
+    color: var(--negro);
+    text-align: center;
+    margin-bottom: 10px;
+}
+.contenedor-pagina-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 5%;
+    min-height: 60vh;
+    background-color: var(--azul-claro);
+}
+.campo-form{
+    margin-bottom: 16px;
+}
+
+.campo-form input:focus{
+    outline: none;
+    border-color: var(--azul);
+    box-shadow: 0 0 0 3px var(--azul-claro);
+}
+.tarjeta-formulario button{
+    width: 100%;
+    margin-top: 8px;
+}
 .formulario{
-    background-color: white;
+    background-color: var(--blanco);
     padding: 40px;
     border-radius: 10px;/* Bordes redondeados */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);/* Sombrita suave */
     max-width: 400px;
 }
 .formulario h2{
-    color: #2c3e50;
+    color: var(--negro);
     text-align: center;
     margin-bottom: 10px;
 }
 .formulario p{
     text-align: center;
-    color: #7f8c8d;
+    color: var(--gris-texto);
     margin-bottom: 20px;
 }
 /* Estilo de las cajas de texto */
 .grupo-intput input{
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--gris-borde);
     border-radius: 5px;
     font-size: 16px;
 }
@@ -161,8 +247,8 @@ footer p{
 button {
     width: 10%;
     padding: 12px;
-    background-color: lightblue;
-    color: white;
+    background-color: var(--azul);
+    color: var(--blanco);
     border: none;
     border-radius: 5px;
     font-size: 16px;
@@ -171,12 +257,12 @@ button {
 }
 /* Color del botón cuando pasas el mouse por encima */
 button:hover {
-    background-color: steelblue;
+    background-color: var(--azul-oscuro);
 }
 
 /* El cuadro blanco donde va el formulario */
 .registro {
-    background-color: #ffffff;
+    background-color: var(--blanco);
     padding: 40px;
     border-radius: 8px; /* Bordes redondeados */
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Sombra elegante */
@@ -184,13 +270,13 @@ button:hover {
 }
 
 .registro h1 {
-    color: #333;
+    color: var(--negro);
     text-align: center;
     margin-bottom: 5px;
 }
 
 .registro p {
-    color: #666;
+    color: var(--gris-texto);
     text-align: center;
     margin-bottom: 20px;
     font-size: 14px;
@@ -204,7 +290,7 @@ button:hover {
 .datos label {
     display: block;
     margin-bottom: 5px;
-    color: #444;
+    color: var(--negro);
     font-weight: bold;
     font-size: 14px;
 }
@@ -213,7 +299,7 @@ button:hover {
 .datos input {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--gris-borde);
     border-radius: 4px;
     font-size: 14px;
 }
