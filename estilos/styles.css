@@ -168,3 +168,47 @@ button {
 button:hover {
     background-color: steelblue;
 }
+
+/* El cuadro blanco donde va el formulario */
+.registro {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Sombra elegante */
+    width: 350px;
+}
+
+.registro h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.registro p {
+    color: #666;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+/* Espaciado entre cada datos */
+.datos {
+    margin-bottom: 15px;
+}
+
+.datos label {
+    display: block;
+    margin-bottom: 5px;
+    color: #444;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* Diseño de las cajas de texto */
+.datos input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
