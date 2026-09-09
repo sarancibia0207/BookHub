@@ -2,7 +2,44 @@
 document.addEventListener('DOMContentLoaded', function() {
 
 //MÉTODO PARA EL INDEX (Buscador de libros por autor)
-const formBusqueda = document.getElementById('formularioBusqueda');
+// Buscador de libros
+
+const formulario = document.getElementById('formularioBusqueda');
+const mostrarTodos = document.getElementById('mostrarTodos');
+const resultado = document.getElementById('resultadoBusqueda');
+
+if (formulario) {
+
+    formulario.addEventListener('submit', function(evento) {
+        evento.preventDefault();
+
+        const busqueda = document.getElementById('autor').value.toLowerCase().trim();
+        const libros = document.querySelectorAll('.libro');
+        let encontrados = 0;
+
+        libros.forEach(function(libro) {
+            const texto = libro.textContent.toLowerCase();
+
+            if (texto.includes(busqueda)) {
+                libro.style.display = '';encontrados++;
+            } else {
+                libro.style.display = 'none';
+            }
+        });
+
+        resultado.textContent = 'Resultados: ' + encontrados + ' libros encontrados';
+    });
+
+    mostrarTodos.addEventListener('click', function() {
+        const libros = document.querySelectorAll('.libro');
+
+        libros.forEach(function(libro) {
+            libro.style.display = '';
+        });
+        document.getElementById('autor').value = '';
+        resultado.textContent = 'Resultados: ' + libros.length + ' libros encontrados';
+    });
+}
 // Comprobamos si estamos en la página del index.html
 if (formBusqueda) {
   formBusqueda.addEventListener('submit', function(evento) {

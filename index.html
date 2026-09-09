@@ -24,18 +24,23 @@
         <section id="bienvenida">
             <h1>Bienvenido a BookHub</h1>
 
-            <form id="formularioBusqueda" action="#" onsubmit="return false;">
-                <label for="autor">Buscar por autor</label>
-                <input type="text" id="autor" name="autor" placeholder="Ej: William Shakespeare">
+            <form id="formularioBusqueda" action="#"> <label for="autor">🔍 Buscar por título o autor</label>
+                <input type="text" id="autor" name="autor" placeholder="Escribe un título o autor...">
+
                 <button type="submit">Buscar</button>
+                <button type="button" id="mostrarTodos">Mostrar todos</button>
             </form>
+        </section>
+        <section class="busqueda">
+            <h2>Buscar libros</h2>
+            <p id="resultadoBusqueda">Resultados: 9 libros encontrados</p>
         </section>
 
         <section id="libros">
             <h2>Libros Destacados</h2>
 
             <article class="libro">
-                <img src="https://covers.openlibrary.org/b/isbn/9788420692067-L.jpg" alt="Portada de La Metamorfosis">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrGGgASkJD7uvRzDSqZ2xfWdiaWrLHPSXO6M-JrnI-jw&s=10" alt="Portada de La Metamorfosis">
                 <h3>La Metamorfosis</h3>
                 <p>Franz Kafka</p>
                 <a class="boton" href="https://www.google.com/search?tbm=bks&q=La+Metamorfosis" target="_blank" rel="noopener">Ver libro</a>
@@ -44,7 +49,7 @@
             <article class="libro">
                 <img src="https://covers.openlibrary.org/b/isbn/9788445071403-L.jpg" alt="Portada de El Señor de los Anillos">
                 <h3>El Señor de los Anillos</h3>
-                <p>J.R.R. Tolkein</p>
+                <p>J.R.R. Tolkien</p>
                 <a class="boton" href="https://www.google.com/search?tbm=bks&q=El+Señor+de+los+Anillos" target="_blank" rel="noopener">Ver libro</a>
             </article>
 
@@ -56,14 +61,48 @@
             </article>
 
             <article class="libro">
-                <img src="https://covers.openlibrary.org/b/isbn/9788420692067-L.jpg" alt="Portada de Don Quijote de la Mancha">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW7xOLHSO6ZSY4EQ2qCW3efRjJRsdKIwQOWeaUCOzpnQ&s=10" alt="Portada de Don Quijote de la Mancha">
                 <h3>Don Quijote de la Mancha</h3>
                 <p>Miguel de Cervantes</p>
                 <a class="boton" href="https://www.google.com/search?tbm=bks&q=Don+Quijote+de+la+Mancha" target="_blank" rel="noopener">Ver libro</a>
             </article>
+
+            <article class="libro">
+                <img src="https://covers.openlibrary.org/b/isbn/9788491050292-L.jpg" alt="Portada de Cien años de soledad">
+                <h3>Cien años de soledad</h3>
+                <p>Gabriel García Márquez</p>
+                <a class="boton" href="https://www.google.com/search?tbm=bks&q=Cien+años+de+soledad" target="_blank" rel="noopener">Ver libro</a>
+            </article>
+
+            <article class="libro">
+                <img src="https://covers.openlibrary.org/b/isbn/9780142437230-L.jpg"alt="Portada de Orgullo y prejuicio">
+                <h3>Orgullo y prejuicio</h3>
+                <p>Jane Austen</p>
+                <a class="boton" href="https://www.google.com/search?tbm=bks&q=Orgullo+y+prejuicio" target="_blank" rel="noopener">Ver libro</a>
+            </article>
+
+            <article class="libro">
+                <img src="https://covers.openlibrary.org/b/isbn/9780061120084-L.jpg"alt="Portada de Matar a un ruiseñor">
+                <h3>Matar a un ruiseñor</h3>
+                <p>Harper Lee</p>
+                <a class="boton" href="https://www.google.com/search?tbm=bks&q=Matar+a+un+ruiseñor" target="_blank" rel="noopener">Ver libro</a>
+            </article>
+
+            <article class="libro">
+                <img src="https://covers.openlibrary.org/b/isbn/9780743273565-L.jpg"alt="Portada de El gran Gatsby">
+                <h3>El gran Gatsby</h3>
+                <p>F. Scott Fitzgerald</p>
+                <a class="boton" href="https://www.google.com/search?tbm=bks&q=El+gran+Gatsby" target="_blank" rel="noopener">Ver libro</a>
+            </article>
+
+            <article class="libro">
+                <img src="https://covers.openlibrary.org/b/isbn/9780451524935-L.jpg"alt="Portada de 1984">
+                <h3>1984</h3>
+                <p>George Orwell</p>
+                <a class="boton" href="https://www.google.com/search?tbm=bks&q=1984+George+Orwell" target="_blank" rel="noopener">Ver libro</a>
+            </article>
         </section>
     </main>
-
 
 
 
@@ -74,6 +113,6 @@
         <img src="" alt="">
         <p>BookHub© 2026 Todos los derechos reservados</p>
     </footer>
-    <script src="metodos.js"></script>
+    <script src="scripts/metodos.js"></script>
 </body>
 </html>
