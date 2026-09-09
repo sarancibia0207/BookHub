@@ -18,8 +18,9 @@ a{
 h1, h2, h3{
     color: #222;
 }
-
-/* Header*/
+/*
+   HEADER Y NAVEGACIÓN
+*/
 header{
     display: flex;
     align-items: center;
@@ -35,6 +36,18 @@ header{
     text-decoration: none;
     color: #1a4d8f;
 }
+header nav a {
+    margin-left: 16px;
+    text-decoration: none;
+    color: #222;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+/*
+   SECCIONES DE LA PÁGINA PRINCIPAL (INDEX)
+*/
 section{
     padding: 80px 10%;
     min-height: 300px;
@@ -78,16 +91,6 @@ section{
     margin-bottom: 8px;
 }
 
-/* Subrayado */
-header nav a {
-    margin-left: 16px;
-    text-decoration: none;
-    color: #222;
-}
-
-header nav a:hover {
-    text-decoration: underline;
-}
 .libro h3{
     font-size: 1rem;
     margin: 4px 0;
@@ -97,7 +100,9 @@ header nav a:hover {
     color: #555;
     margin: 0 0 8px;
 }
-
+/*
+  ESTILOS DE FORMULARIOS (CREAR CUENTA E INICIO DE SESIÓN)
+*/
 .boton,
 button{
     display: inline-block;
