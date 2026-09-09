@@ -6,9 +6,38 @@
     <title>Crea tu Cuenta BookHub</title>
 </head>
 <body>
-    <section id="new account">
-        
-    </section>
-    
+    <div class="registro">
+            <h1>Creación de Cuenta</h1>
+            <p>Regístrate para pedir libros prestados</p>
+
+            <!-- El formulario que agrupa los datos -->
+            <form id="formularioCuenta">
+
+                <div class="datos">
+                    <label for="nombre">Nombre completo:</label>
+                    <input type="text" id="nombre" placeholder="Ej. Carlos Ruiz" required>
+                </div>
+
+                <div class="datos">
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" placeholder="correo@ejemplo.com" required>
+                </div>
+
+                <div class="datos">
+                    <label for="libro">Género literario favorito:</label>
+                    <input type="text" id="libro" placeholder="Ej. Ciencia Ficción, Terror..." required>
+                </div>
+
+                <div class="datos">
+                    <label for="clave">Contraseña:</label>
+                    <input type="password" id="clave" placeholder="Crea una contraseña" required>
+                </div>
+
+                <button type="submit">Crear mi cuenta</button>
+            </form>
+        </div>
+
+        <!-- Aquí conectamos la lógica (JavaScript) al final del body -->
+        <script src="metodos.js"></script>
 </body>
 </html>
