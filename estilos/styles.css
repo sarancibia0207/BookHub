@@ -387,3 +387,35 @@ button:hover {
     width: 100%;
     margin-top: 5px;
 }
+/* =========================================
+   ESTILOS DE QUIENES SOMOS
+========================================= */
+.sobre-nosotros {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 5%;
+}
+
+.tarjeta-info {
+    background-color: var(--blanco);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: var(--sombra);
+    max-width: 800px;
+    text-align: center;
+}
+
+.tarjeta-info h2 {
+    color: var(--azul-oscuro);
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.tarjeta-info p {
+    color: var(--gris-texto);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin: 0;
+}
