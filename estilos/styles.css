@@ -303,3 +303,62 @@ button:hover {
     border-radius: 4px;
     font-size: 14px;
 }
+
+/* =========================================
+   ESTILOS DEL CARRITO DE COMPRAS
+========================================= */
+.contenedor-carrito {
+    background-color: var(--blanco);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--sombra);
+    margin-top: 20px;
+}
+
+.item-carrito {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--gris-borde);
+    padding: 15px 0;
+}
+
+.item-carrito:last-child {
+    border-bottom: none;
+}
+
+.info-item h3 {
+    margin: 0 0 5px 0;
+    color: var(--azul-oscuro);
+    font-size: 1.1rem;
+}
+
+.info-item p {
+    margin: 0;
+    color: var(--gris-texto);
+    font-size: 0.9rem;
+}
+
+.total-carrito {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--negro);
+    text-align: right;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 2px solid var(--azul-claro);
+}
+
+.eliminar-item {
+    background-color: #d9534f;
+}
+
+.eliminar-item:hover {
+    background-color: #c9302c;
+}
+
+.precio {
+    font-weight: bold;
+    color: var(--azul);
+    margin: 5px 0 15px 0 !important;
+}
