@@ -19,9 +19,27 @@
             <a href="carrito-compras.html">Carrito de Compras</a>
         </nav>
     </header>
-    <main class="contenedor">
+    <main class="contenedor" style="padding: 40px 10%; min-height: 60vh;">
         <h1>Carrito de Compras</h1>
-
+        <div class="contenedor-carrito">
+            <div id="lista-carrito">
+                <!-- Los artículos se generarán aquí con JavaScript -->
+            </div>
+            <div id="total-carrito" class="total-carrito">
+                Total: $0
+            </div>
+            <button id="vaciar-carrito" class="boton" style="margin-top: 20px; background-color: #d9534f;">Vaciar Carrito</button>
+            <button id="pagar-carrito" class="boton" style="margin-top: 20px; float: right;">Proceder al Pago</button>
+        </div>
     </main>
+
+    <footer id="footer">
+        <p>Nuestras redes sociales</p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Logo_de_Facebook.png?utm_source=es.wikipedia.org&utm_campaign=index&utm_content=original" width="100" height="80" alt="BookHub Logo">
+        <img src="https://unblast.com/wp-content/uploads/2025/07/instagram-logo-colored.jpg" width="100" height="80" alt="BookHub Logo">
+        <img src="" alt="">
+        <p>BookHub© 2026 Todos los derechos reservados</p>
+    </footer>
+    <script src="scripts/metodos.js"></script>
 </body>
 </html>
