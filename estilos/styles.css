@@ -362,3 +362,28 @@ button:hover {
     color: var(--azul);
     margin: 5px 0 15px 0 !important;
 }
+
+/* Estilos para el control de cantidad y botón en el index */
+.controles-compra {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.input-cantidad {
+    width: 60px;
+    padding: 5px;
+    border: 1px solid var(--gris-borde);
+    border-radius: 4px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Modificamos un poco el botón para que ocupe todo el ancho disponible del artículo */
+.controles-compra .boton {
+    width: 100%;
+    margin-top: 5px;
+}

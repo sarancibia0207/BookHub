@@ -218,3 +218,47 @@ document.addEventListener('DOMContentLoaded', () => {
         mostrarCarrito();
     }
 });
+
+// 5.LÓGICA PARA INDEX.HTML - Agregar al carrito y redirigir
+    botonesAgregar.forEach(boton => {
+        boton.addEventListener('click', (e) => {
+            // Obtenemos los datos del botón
+            const id = e.target.getAttribute('data-id');
+            const titulo = e.target.getAttribute('data-titulo');
+            const autor = e.target.getAttribute('data-autor');
+            const precio = parseFloat(e.target.getAttribute('data-precio'));
+
+            // Obtenemos el ID del input asociado y leemos la cantidad elegida
+            const inputAsociado = e.target.getAttribute('data-input');
+            const cantidadSeleccionada = parseInt(document.getElementById(inputAsociado).value);
+
+            // Validamos que la cantidad sea un número válido y mayor a 0
+            if (isNaN(cantidadSeleccionada) || cantidadSeleccionada < 1) {
+                alert("Por favor, selecciona una cantidad válida.");
+                return;
+            }
+
+            // Revisar si el libro ya está en el carrito
+            const existe = carrito.some(item => item.id === id);
+
+            if (existe) {
+                // Si existe, le sumamos la cantidad que el usuario acaba de seleccionar
+                carrito = carrito.map(item => {
+                    if (item.id === id) {
+                        item.cantidad += cantidadSeleccionada;
+                    }
+                    return item;
+                });
+            } else {
+                // Agregar libro nuevo con su cantidad respectiva
+                const libro = { id, titulo, autor, precio, cantidad: cantidadSeleccionada };
+                carrito.push(libro);
+            }
+
+            // Guardamos en el localStorage
+            guardarEnStorage();
+
+            // REDIRECCIÓN: Enviamos al usuario a la página del carrito
+            window.location.href = 'carrito-compras.html';
+        });
+    });
