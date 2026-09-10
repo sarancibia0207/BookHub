@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
 
                 localStorage.setItem('carritoBookHub', JSON.stringify(carrito));
-                window.location.href = 'pages/carrito-compras.html';
+                alert(`"${titulo}" se agrego a tu carrito de compras.`);
             });
         });
     }

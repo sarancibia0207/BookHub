@@ -23,8 +23,8 @@ body{
     flex-direction: column;
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    color: #222;
-    background-color: #faf7f0;
+    color: var(--negro);
+    background-color: var(--blanco);
     line-height: 1.5;
 }
 footer{
@@ -169,6 +169,10 @@ button{
 button:hover{
     background-color: var(--azul-oscuro);
 }
+.boton:hover,
+button:hover{
+    background-color: var(--azul-oscuro);
+}
 
 footer{
     background-color: var(--negro);
@@ -242,18 +246,6 @@ footer p{
     border: 1px solid var(--gris-borde);
     border-radius: 5px;
     font-size: 16px;
-}
-/* Estilo del botón */
-button {
-    width: 10%;
-    padding: 12px;
-    background-color: var(--azul);
-    color: var(--blanco);
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background 0.3s; /* Animación suave al pasar el mouse */
 }
 /* Color del botón cuando pasas el mouse por encima */
 button:hover {
