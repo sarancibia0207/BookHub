@@ -112,3 +112,109 @@ if (formLogin) {
     });
   }
 });
+
+// 4. MÉTODO PARA CARRITO DE COMPRAS
+document.addEventListener('DOMContentLoaded', () => {
+    // Variables y selectores
+    const botonesAgregar = document.querySelectorAll('.agregar-carrito');
+    const contenedorCarrito = document.getElementById('lista-carrito');
+    const totalCarrito = document.getElementById('total-carrito');
+    const botonVaciar = document.getElementById('vaciar-carrito');
+
+    // Intentamos cargar el carrito desde localStorage o inicializamos un array vacío
+    let carrito = JSON.parse(localStorage.getItem('carritoBookHub')) || [];
+
+    // LÓGICA PARA INDEX.HTML - Agregar al carrito
+    botonesAgregar.forEach(boton => {
+        boton.addEventListener('click', (e) => {
+            const id = e.target.getAttribute('data-id');
+            const titulo = e.target.getAttribute('data-titulo');
+            const autor = e.target.getAttribute('data-autor');
+            const precio = parseFloat(e.target.getAttribute('data-precio'));
+
+            const libro = { id, titulo, autor, precio, cantidad: 1 };
+
+            // Revisar si el libro ya está en el carrito
+            const existe = carrito.some(item => item.id === id);
+
+            if (existe) {
+                // Actualizar la cantidad
+                carrito = carrito.map(item => {
+                    if (item.id === id) {
+                        item.cantidad++;
+                    }
+                    return item;
+                });
+            } else {
+                // Agregar libro nuevo
+                carrito.push(libro);
+            }
+
+            guardarEnStorage();
+            alert(`"${titulo}" se ha agregado a tu carrito de compras.`);
+        });
+    });
+
+    // LÓGICA PARA CARRITO-COMPRAS.HTML - Mostrar el carrito
+    function mostrarCarrito() {
+        if (!contenedorCarrito) return; // Salir si no estamos en la página del carrito
+
+        contenedorCarrito.innerHTML = ''; // Limpiar el HTML
+        let precioTotal = 0;
+
+        if (carrito.length === 0) {
+            contenedorCarrito.innerHTML = '<p style="text-align:center; color: var(--gris-texto);">Tu carrito está vacío. ¡Ve a buscar unos libros!</p>';
+            totalCarrito.textContent = 'Total: $0';
+            return;
+        }
+
+        carrito.forEach(item => {
+            const div = document.createElement('div');
+            div.classList.add('item-carrito');
+            div.innerHTML = `
+                <div class="info-item">
+                    <h3>${item.titulo}</h3>
+                    <p>${item.autor}</p>
+                    <p>Precio unitario: $${item.precio} | <strong>Cantidad: ${item.cantidad}</strong></p>
+                </div>
+                <div>
+                    <button class="eliminar-item boton" data-id="${item.id}">X Eliminar</button>
+                </div>
+            `;
+            contenedorCarrito.appendChild(div);
+            precioTotal += item.precio * item.cantidad;
+        });
+
+        totalCarrito.textContent = `Total: $${precioTotal}`;
+
+        // Asignar función a los nuevos botones de eliminar
+        document.querySelectorAll('.eliminar-item').forEach(boton => {
+            boton.addEventListener('click', (e) => {
+                const id = e.target.getAttribute('data-id');
+                // Filtrar el carrito quitando el elemento seleccionado
+                carrito = carrito.filter(item => item.id !== id);
+                guardarEnStorage();
+                mostrarCarrito(); // Volver a dibujar el carrito
+            });
+        });
+    }
+
+    // Guardar el carrito actualizado en localStorage
+    function guardarEnStorage() {
+        localStorage.setItem('carritoBookHub', JSON.stringify(carrito));
+    }
+
+    // Vaciar todo el carrito
+    if (botonVaciar) {
+        botonVaciar.addEventListener('click', () => {
+            carrito = [];
+            guardarEnStorage();
+            mostrarCarrito();
+        });
+    }
+
+    // Si estamos en la página del carrito, renderizamos los artículos al cargar
+    if (contenedorCarrito) {
+        mostrarCarrito();
+    }
+});
