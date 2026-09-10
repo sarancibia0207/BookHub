@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Mostrar "Mi Perfil" en si el usuario inicia sesion 
+    // Mostrar "Mi Perfil" en si el usuario inicia sesion
     function actualizarNav() {
         const linkPerfil = document.getElementById('linkPerfil');
         const haySesion = localStorage.getItem('sesionActivaBookHub');
@@ -208,3 +208,97 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+// 7. LÓGICA DEL ADMINISTRADOR (admin.html)
+    const formAdmin = document.getElementById('formularioAdmin');
+    const listaInventario = document.getElementById('lista-inventario');
+
+    if (formAdmin && listaInventario) {
+        let inventario = JSON.parse(localStorage.getItem('inventarioBookHub')) || [];
+
+        function renderizarInventario() {
+            listaInventario.innerHTML = '';
+            if (inventario.length === 0) {
+                listaInventario.innerHTML = '<p style="text-align:center; color: var(--gris-texto);">No hay libros en el inventario.</p>';
+                return;
+            }
+
+            inventario.forEach((libro, index) => {
+                const div = document.createElement('div');
+                div.classList.add('item-carrito');
+                div.innerHTML = `
+                    <div class="info-item">
+                        <h3>${libro.titulo}</h3>
+                        <p>${libro.autor}</p>
+                        <p class="precio">$${libro.precio}</p>
+                    </div>
+                    <div>
+                        <button class="boton btn-editar" data-index="${index}" style="background-color: #f0ad4e; margin-right: 5px;">Editar</button>
+                        <button class="boton btn-eliminar-admin eliminar-item" data-index="${index}">Eliminar</button>
+                    </div>
+                `;
+                listaInventario.appendChild(div);
+            });
+
+            // Eventos para eliminar
+            document.querySelectorAll('.btn-eliminar-admin').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const idx = e.target.getAttribute('data-index');
+                    if(confirm('¿Estás seguro de eliminar este libro?')){
+                        inventario.splice(idx, 1);
+                        localStorage.setItem('inventarioBookHub', JSON.stringify(inventario));
+                        renderizarInventario();
+                    }
+                });
+            });
+
+            // Eventos para editar
+            document.querySelectorAll('.btn-editar').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const idx = e.target.getAttribute('data-index');
+                    const libro = inventario[idx];
+
+                    document.getElementById('libroId').value = idx;
+                    document.getElementById('tituloLibro').value = libro.titulo;
+                    document.getElementById('autorLibro').value = libro.autor;
+                    document.getElementById('precioLibro').value = libro.precio;
+
+                    document.getElementById('tituloAdmin').textContent = 'Editar Libro';
+                    document.getElementById('btnCancelarEdicion').style.display = 'inline-block';
+                });
+            });
+        }
+
+        formAdmin.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const id = document.getElementById('libroId').value;
+            const nuevoLibro = {
+                titulo: document.getElementById('tituloLibro').value,
+                autor: document.getElementById('autorLibro').value,
+                precio: document.getElementById('precioLibro').value
+            };
+
+            if (id === "") {
+                inventario.push(nuevoLibro);
+                alert('Libro agregado exitosamente.');
+            } else {
+                inventario[id] = nuevoLibro;
+                alert('Libro editado exitosamente.');
+            }
+
+            localStorage.setItem('inventarioBookHub', JSON.stringify(inventario));
+            formAdmin.reset();
+            document.getElementById('libroId').value = "";
+            document.getElementById('tituloAdmin').textContent = 'Agregar Nuevo Libro';
+            document.getElementById('btnCancelarEdicion').style.display = 'none';
+            renderizarInventario();
+        });
+
+        document.getElementById('btnCancelarEdicion').addEventListener('click', () => {
+            formAdmin.reset();
+            document.getElementById('libroId').value = "";
+            document.getElementById('tituloAdmin').textContent = 'Agregar Nuevo Libro';
+            document.getElementById('btnCancelarEdicion').style.display = 'none';
+        });
+
+        renderizarInventario();
+    }
