@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil - BookHub</title>
+    <link rel="stylesheet" href="../estilos/styles.css">
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="logo">BookHub</a>
+
+        <nav>
+            <a href="../index.html">Inicio</a>
+            <a href="../index.html#libros">Libros</a>
+            <a href="quienes-somos.html">¿Quienes somos?</a>
+            <a href="inicio-sesion.html" id="linkAcceder">Acceder</a>
+            <a href="userpage.html" id="linkPerfil" style="display:none;">Mi Perfil</a>
+            <a href="crear-cuenta.html" id="linkRegistrarse">Registrarse</a>
+            <a href="carrito-compras.html">Carrito de Compras</a>
+        </nav>
+    </header>
+
+    <main class="contenedor-pagina-form">
+        <div class="tarjeta-formulario">
+            <h1>Mi Perfil</h1>
+            <p>Tus datos de cuenta</p>
+
+            <div id="datosPerfil" class="campo-form">
+                <p><strong>Tu nombre:</strong> <span id="perfilNombre"></span></p>
+                <p><strong>Correo electrónico:</strong> <span id="perfilEmail"></span></p>
+                <p><strong>Género de terror favorito:</strong> <span id="perfilGenero"></span></p>
+            </div>
+
+            <button id="cerrarSesion" class="boton" style="margin-top: 15px; background-color: #d9534f;">Cerrar sesión</button>
+        </div>
+    </main>
+
+    <footer id="footer">
+        <p>Nuestras redes sociales</p>
+        <a href="https://www.facebook.com/">
+            <img src="../images/facebook.webp" width="60" height="60" alt="BookHub Logo">
+        </a>
+        <a href="https://www.instagram.com/">
+            <img src="../images/instagram.webp" width="60" height="60" alt="BookHub Logo">
+        </a>
+        <p>BookHub© 2026 Todos los derechos reservados</p>
+    </footer>
+
+    <script src="../scripts/metodos.js"></script>
+</body>
+</html>

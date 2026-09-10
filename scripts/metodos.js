@@ -1,4 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Mostrar "Mi Perfil" en si el usuario inicia sesion 
+    function actualizarNav() {
+        const linkPerfil = document.getElementById('linkPerfil');
+        const haySesion = localStorage.getItem('sesionActivaBookHub');
+        if (linkPerfil) linkPerfil.style.display = haySesion ? 'inline' : 'none';
+    }
+    actualizarNav();
 
     // 1. Buscador de libros por autor
     const formBusqueda = document.getElementById('formularioBusqueda');
@@ -48,6 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
         formCuenta.addEventListener('submit', function(evento) {
             evento.preventDefault();
             const nombre = document.getElementById('nombre').value;
+            const email = document.getElementById('email').value;
             const genero = document.getElementById('libro').value;
             const clave = document.getElementById('clave').value;
 
@@ -55,6 +63,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 alert('La contraseña debe tener al menos 6 caracteres.');
                 return;
             }
+            localStorage.setItem('perfilBookHub', JSON.stringify({ nombre, email, genero }));
+
             alert('¡Cuenta creada con éxito!\n\nBienvenido a BookHub, ' + nombre + '.\nHemos guardado tus gustos sobre: ' + genero);
             formCuenta.reset();
         });
@@ -66,8 +76,10 @@ document.addEventListener('DOMContentLoaded', function() {
         formLogin.addEventListener('submit', function(evento) {
             evento.preventDefault();
             const email = document.getElementById('email').value;
+            localStorage.setItem('sesionActivaBookHub', email);
             alert('¡Bienvenido de nuevo!\nHas iniciado sesión correctamente con el correo: ' + email);
             formLogin.reset();
+            actualizarNav();
         });
     }
 
@@ -169,7 +181,30 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Pintar el carrito apenas cargue la página carrito-compras.html
-    if (contenedorCarrito) {
+        if (contenedorCarrito) {
         mostrarCarrito();
+    }
+
+    // 6. MÉTODO PARA MI PERFIL (userpage.html)
+    const datosPerfil = document.getElementById('datosPerfil');
+    if (datosPerfil) {
+        const perfilGuardado = JSON.parse(localStorage.getItem('perfilBookHub'));
+
+        if (perfilGuardado) {
+            document.getElementById('perfilNombre').textContent = perfilGuardado.nombre || '';
+            document.getElementById('perfilEmail').textContent = perfilGuardado.email || '';
+            document.getElementById('perfilGenero').textContent = perfilGuardado.genero || '';
+        }
+
+        const botonCerrarSesion = document.getElementById('cerrarSesion');
+        if (botonCerrarSesion) {
+            botonCerrarSesion.addEventListener('click', () => {
+                localStorage.removeItem('perfilBookHub');
+                localStorage.removeItem('sesionActivaBookHub');
+                alert('Sesión cerrada correctamente.');
+                actualizarNav();
+                window.location.href = 'inicio-sesion.html';
+            });
+        }
     }
 });
